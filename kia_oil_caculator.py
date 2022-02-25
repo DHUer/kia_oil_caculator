@@ -51,7 +51,11 @@ if __name__ == '__main__':
             p2miles['guoguo'] += miles_avg if list_of_lists[i][5]  == "TRUE" else 0
 
 
-    print("name , miles, precent")
+    headers = ['Name', 'Miles', 'Percentage', 'money']
+    format_string = "{:<12}{:<24}{:<24}{:<24}"
+    print(format_string.format(*headers))
     total_miles = sum(p2miles.values())
     for key, value in p2miles.items():
-        pprint.pprint(key + ",      " + str(value) + ",     " + str(value/total_miles) + ",    "+ str(total_money*(value/total_miles)))
+        item = [key, value, value/total_miles, total_money*(value/total_miles)]
+        print(format_string.format(*item))
+
