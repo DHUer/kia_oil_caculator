@@ -21,7 +21,8 @@ if __name__ == '__main__':
     gc = gspread.service_account(filename='service_account.json')
     sh = gc.open("Ride").sheet1
 
-    begin_date = input("Enter the time in this yyyy-MM-dd format: ")
+    begin_date = input("Enter the begin time in this yyyy-MM-dd format: ")
+    end_date = input("Enter the end time in this yyyy-MM-dd format: ")
 
     total_money = float(input("How Many money you want to amotize: "))
     list_of_lists = sh.get_all_values()
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     
     for i in range(2, len(list_of_lists)):
         cnt = 0
-        if list_of_lists[i][6] >= begin_date:
+        if list_of_lists[i][6] >= begin_date and list_of_lists[i][6] < end_date:
             for j in range(2, 6):
                 if list_of_lists[i][j] == "TRUE":
                     cnt = cnt + 1
