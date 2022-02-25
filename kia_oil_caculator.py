@@ -24,7 +24,7 @@ if __name__ == '__main__':
     begin_date = input("Enter the begin time in this yyyy-MM-dd format: ")
     end_date = input("Enter the end time in this yyyy-MM-dd format: ")
 
-    total_money = float(input("How Many money you want to amotize: "))
+    total_money = float(input("How Many money you want to amortize: "))
     list_of_lists = sh.get_all_values()
 
     try:
